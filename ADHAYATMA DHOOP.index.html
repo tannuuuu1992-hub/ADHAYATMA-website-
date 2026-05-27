@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhayatma Dhoop | Divine Luxury Incense Sticks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        :root {
+            --bg-dark: #0f0502;
+            --saffron-deep: #802200;
+            --saffron-bright: #ff5500;
+            --gold-metallic: linear-gradient(135deg, #ffe082 0%, #b38f00 50%, #ffe082 100%);
+            --gold-solid: #d4af37;
+            --text-light: #fff5eb;
+            --text-muted: #cca085;
+            --font-sacred: 'Cinzel', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        /* --- GLOBAL RESETS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 20%, #4a1200 0%, var(--bg-dark) 70%);
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, .brand-logo {
+            font-family: var(--font-sacred);
+            letter-spacing: 2px;
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 5, 2, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-metallic);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-sacred);
+            font-weight: bold;
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: var(--gold-metallic);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold-solid);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            font-size: 0.9rem;
+            color: var(--gold-solid);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffe082 50%, #b38f00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--gold-metallic);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: var(--font-sacred);
+            letter-spacing: 1px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(179, 143, 0, 0.4);
+            transition: 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(255, 224, 130, 0.6);
+            background: transparent;
+            color: var(--gold-solid);
+            border: 1px solid var(--gold-solid);
+        }
+
+        /* Visual Element: Floating Aura in Hero Background */
+        .hero-visual {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-40%);
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 85, 0, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual::before {
+            content: '';
+            width: 250px;
+            height: 250px;
+            border: 1px dashed rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            animation: rotate 20s linear infinite;
+        }
+
+        /* --- THE SACRED TRINITY (FEATURES) --- */
+        .features {
+            padding: 100px 100px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.05);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .section-title span {
+            background: var(--gold-metallic);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 0 5%;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(25, 10, 5, 0.8) 0%, rgba(15, 5, 2, 1) 100%);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-solid);
+            box-shadow: 0 10px 30px rgba(128, 34, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--gold-solid);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- FOOTER / CLOSING CALL TO ACTION --- */
+        footer {
+            background: #080201;
+            padding: 60px 10% 30px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-cta p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: rgba(204, 160, 133, 0.4);
+            letter-spacing: 1px;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            header { padding: 20px 5%; }
+            nav { display: none; } /* Simplified for single page baseline */
+            .hero { padding: 120px 5% 60px; text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-visual { display: none; }
+            .features { padding: 80px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-circle">AD</div>
+            <span class="brand-name">Adhayatma Dhoop</span>
+        </div>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#experience">The Experience</a>
+            <a href="#collection">Collection</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tag">Elevate Your Space</span>
+            <h1>Awaken the Divine Within Your Home</h1>
+            <p>Experience ultra-premium, completely natural Dhoop sticks crafted to transform ordinary air into a sacred ritual. Handcrafted with traditional herbs, essential oils, and zero charcoal for pure, unadulterated spiritual energy.</p>
+            <a href="#collection" class="btn-gold">Explore The Collection</a>
+        </div>
+        
+        <div class="hero-visual">
+            <div style="font-family: var(--font-sacred); font-size: 5rem; color: rgba(212, 175, 55, 0.15);">ॐ</div>
+        </div>
+    </section>
+
+    <section class="features" id="experience">
+        <h2 class="section-title">The <span>Adhayatma</span> Standard</h2>
+        <p class="section-subtitle">Why our incense stays on your mind long after the smoke clears.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">✨</span>
+                <h3>Pure Spiritual Energy</h3>
+                <p>Formulated matching strict Vedic traditions to clear negative energies and invite peace, mental clarity, and profound calmness into your environment.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌿</span>
+                <h3>100% Charcoal-Free</h3>
+                <p>We use premium plant-based binding resins instead of cheap black carbon, giving you a clean burn that is safe for the lungs and soothing to the soul.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">⏳</span>
+                <h3>Long-Lasting Aroma</h3>
+                <p>Infused with deeply rich, natural oils that stay bound to the space, ensuring a magnificent premium fragrance that lingers delicately for hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" style="background: rgba(10, 3, 1, 0.5); padding: 100px 0;">
+        <footer>
+            <div class="footer-cta">
+                <h2>Ready to Transform Your Rituals?</h2>
+                <p>Be the first to experience the premium difference of Adhayatma Dhoop. Join our exclusive pre-launch list or secure your order to elevate your daily meditation and home ambience.</p>
+                <a href="mailto:info@adhayatmadhoop.com" class="btn-gold">Secure Premium Box</a>
+            </div>
+            <p class="copyright">&copy; 2026 Adhayatma Dhoop. Crafted with Devotion. All Rights Reserved.</p>
+        </footer>
+    </section>
+
+</body>
+</html>
