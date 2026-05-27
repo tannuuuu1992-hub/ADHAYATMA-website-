@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhayatma Dhoop | Divine Luxury Incense Sticks</title>
+    <title>Adhayatma Dhoop | Divine Luxury Incense</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
         :root {
-            --bg-dark: #0f0502;
-            --saffron-deep: #802200;
-            --saffron-bright: #ff5500;
-            --gold-metallic: linear-gradient(135deg, #ffe082 0%, #b38f00 50%, #ffe082 100%);
-            --gold-solid: #d4af37;
-            --text-light: #fff5eb;
-            --text-muted: #cca085;
+            --bg-pale-yellow: #fffdf2;
+            --bg-accent: #fcf6da;
+            --deep-saffron: #cf4d00;
+            --charcoal-black: #1a1512;
+            --gold-shadow: rgba(184, 134, 11, 0.15);
             --font-sacred: 'Cinzel', serif;
+            --font-decorative: 'Cinzel Decorative', serif;
             --font-body: 'Poppins', sans-serif;
         }
 
-        /* --- GLOBAL RESETS --- */
         * {
             margin: 0;
             padding: 0;
@@ -30,332 +27,278 @@
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: var(--bg-pale-yellow);
+            color: var(--charcoal-black);
             font-family: var(--font-body);
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 20%, #4a1200 0%, var(--bg-dark) 70%);
+            /* Subtly textured background */
+            background-image: radial-gradient(circle at 50% 0%, var(--bg-accent) 0%, var(--bg-pale-yellow) 70%);
         }
 
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3, .brand-logo {
-            font-family: var(--font-sacred);
-            letter-spacing: 2px;
+        /* --- IMMERSIVE BACKGROUND ARTWORKS --- */
+        /* Animated Sacred Mandala Aura */
+        .mandala-bg {
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            opacity: 0.07;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/41/Mandala_vector_colored.svg') no-repeat center;
+            background-size: contain;
+            animation: cosmicRotate 60s linear infinite;
+            z-index: 1;
+            pointer-events: none;
         }
 
-        /* --- HEADER / NAVIGATION --- */
+        /* Divine Silhouette Silhouettes strategically placed */
+        .god-silhouette {
+            position: absolute;
+            bottom: 10%;
+            left: 2%;
+            width: 300px;
+            height: 500px;
+            opacity: 0.04;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Shiva_silhouette.svg') no-repeat bottom center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* --- PREMIUM HEADER --- */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
-            padding: 20px 10%;
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 5, 2, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            background: rgba(255, 253, 242, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid rgba(207, 77, 0, 0.1);
             z-index: 1000;
+            box-shadow: 0 4px 20px var(--gold-shadow);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-circle {
-            width: 40px;
-            height: 40px;
-            background: var(--gold-metallic);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: var(--font-sacred);
-            font-weight: bold;
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .brand-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            background: var(--gold-metallic);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-box img {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
         }
 
         nav a {
-            color: var(--text-muted);
+            color: var(--charcoal-black);
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
+            margin-left: 25px;
+            font-family: var(--font-sacred);
+            font-size: 0.85rem;
             letter-spacing: 1px;
             transition: 0.3s;
+            font-weight: 600;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--gold-solid);
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        nav a:hover {
+            color: var(--deep-saffron);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO PRESENTATION --- */
         .hero {
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 0 10%;
+            padding: 40px 8%;
             position: relative;
-            padding-top: 80px;
+            gap: 40px;
         }
 
-        .hero-content {
-            max-width: 600px;
+        .hero-text {
+            flex: 1;
             z-index: 2;
         }
 
-        .hero-tag {
-            font-size: 0.9rem;
-            color: var(--gold-solid);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero-text h1 {
+            font-family: var(--font-decorative);
+            font-size: 2.8rem;
+            color: var(--charcoal-black);
             line-height: 1.2;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #ffffff 0%, #ffe082 50%, #b38f00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
+        .hero-text p {
+            font-size: 1.05rem;
             line-height: 1.8;
-            margin-bottom: 40px;
+            color: #4a3e36;
+            margin-bottom: 35px;
+        }
+
+        .hero-showcase {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        /* Showcases your actual high-end launch artwork banner */
+        .main-banner-img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(26, 21, 18, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .main-banner-img:hover {
+            transform: scale(1.02);
         }
 
         /* --- BUTTONS --- */
-        .btn-gold {
+        .btn-saffron {
             display: inline-block;
-            padding: 15px 35px;
-            background: var(--gold-metallic);
-            color: var(--bg-dark);
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #ff6a00 0%, var(--deep-saffron) 100%);
+            color: white;
             text-decoration: none;
             font-weight: 600;
             font-family: var(--font-sacred);
             letter-spacing: 1px;
             border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(179, 143, 0, 0.4);
-            transition: 0.4s ease;
-            border: 1px solid transparent;
+            box-shadow: 0 5px 20px rgba(207, 77, 0, 0.3);
+            transition: 0.3s ease;
         }
 
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(255, 224, 130, 0.6);
-            background: transparent;
-            color: var(--gold-solid);
-            border: 1px solid var(--gold-solid);
+        .btn-saffron:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(207, 77, 0, 0.5);
         }
 
-        /* Visual Element: Floating Aura in Hero Background */
-        .hero-visual {
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-40%);
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(255, 85, 0, 0.15) 0%, rgba(0,0,0,0) 70%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* --- BRAND PORTFOLIO / GALLERY --- */
+        .products-section {
+            padding: 80px 8%;
+            position: relative;
+            background: #fffbe6;
         }
 
-        .hero-visual::before {
-            content: '';
-            width: 250px;
-            height: 250px;
-            border: 1px dashed rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
-            position: absolute;
-            animation: rotate 20s linear infinite;
-        }
-
-        /* --- THE SACRED TRINITY (FEATURES) --- */
-        .features {
-            padding: 100px 100px;
+        .section-header {
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.05);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-        
-        .section-title span {
-            background: var(--gold-metallic);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
             margin-bottom: 60px;
-            font-style: italic;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .section-header h2 {
+            font-size: 2.3rem;
+            font-family: var(--font-sacred);
+            color: var(--charcoal-black);
+            margin-bottom: 10px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
             gap: 40px;
-            padding: 0 5%;
+            justify-content: center;
         }
 
-        .card {
-            background: linear-gradient(180deg, rgba(25, 10, 5, 0.8) 0%, rgba(15, 5, 2, 1) 100%);
-            padding: 40px 30px;
+        .product-card {
+            background: var(--bg-pale-yellow);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            padding: 25px;
             border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-solid);
-            box-shadow: 0 10px 30px rgba(128, 34, 0, 0.3);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--gold-solid);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* --- FOOTER / CLOSING CALL TO ACTION --- */
-        footer {
-            background: #080201;
-            padding: 60px 10% 30px;
+            width: 320px;
             text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 24px var(--gold-shadow);
+            transition: transform 0.4s ease, border-color 0.4s ease;
         }
 
-        .footer-cta h2 {
-            font-size: 2rem;
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--deep-saffron);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
             margin-bottom: 20px;
+            border-radius: 4px;
         }
 
-        .footer-cta p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
+        .product-card h3 {
+            font-family: var(--font-sacred);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
         }
 
-        .copyright {
-            margin-top: 60px;
-            font-size: 0.8rem;
-            color: rgba(204, 160, 133, 0.4);
-            letter-spacing: 1px;
+        .product-card p {
+            font-size: 0.9rem;
+            color: #615349;
+            line-height: 1.5;
         }
 
         /* --- ANIMATIONS --- */
-        @keyframes rotate {
+        @keyframes cosmicRotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
-        /* --- RESPONSIVENESS --- */
-        @media (max-width: 768px) {
-            header { padding: 20px 5%; }
-            nav { display: none; } /* Simplified for single page baseline */
-            .hero { padding: 120px 5% 60px; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-visual { display: none; }
-            .features { padding: 80px 20px; }
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 820px) {
+            header { padding: 15px 4%; }
+            nav { display: none; }
+            .hero { flex-direction: column-reverse; text-align: center; padding: 40px 4%; }
+            .hero-text h1 { font-size: 2rem; }
+            .main-banner-img { max-height: 350px; }
+            .mandala-bg { width: 350px; height: 350px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="mandala-bg"></div>
+    <div class="god-silhouette"></div>
+
     <header>
-        <div class="logo-container">
-            <div class="logo-circle">AD</div>
-            <span class="brand-name">Adhayatma Dhoop</span>
+        <div class="logo-box">
+            <img src="logo.png" alt="Adhayatma Dhoop Logo">
         </div>
         <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#experience">The Experience</a>
-            <a href="#collection">Collection</a>
+            <a href="#divine-experience">The Essence</a>
+            <a href="#signature-collection">Our Packaging</a>
+            <a href="mailto:orders@adhayatmadhoop.com">Pre-Order</a>
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <span class="hero-tag">Elevate Your Space</span>
-            <h1>Awaken the Divine Within Your Home</h1>
-            <p>Experience ultra-premium, completely natural Dhoop sticks crafted to transform ordinary air into a sacred ritual. Handcrafted with traditional herbs, essential oils, and zero charcoal for pure, unadulterated spiritual energy.</p>
-            <a href="#collection" class="btn-gold">Explore The Collection</a>
+    <section class="hero" id="divine-experience">
+        <div class="hero-text">
+            <h1>Experience Divine Luxury</h1>
+            <p>Immerse yourself completely in the magnificent essence of pure, absolute spiritual luxury. Hand-rolled to perfection, charcoal-free, and bound with therapeutic botanical extracts that linger inside your mind and living space forever.</p>
+            <a href="#signature-collection" class="btn-saffron">View Luxury Packs</a>
         </div>
-        
-        <div class="hero-visual">
-            <div style="font-family: var(--font-sacred); font-size: 5rem; color: rgba(212, 175, 55, 0.15);">ॐ</div>
+        <div class="hero-showcase">
+            <img src="banner-shiva.png" alt="Lord Shiva Divine Luxury Showcase" class="main-banner-img">
         </div>
     </section>
 
-    <section class="features" id="experience">
-        <h2 class="section-title">The <span>Adhayatma</span> Standard</h2>
-        <p class="section-subtitle">Why our incense stays on your mind long after the smoke clears.</p>
-        
-        <div class="grid">
-            <div class="card">
-                <span class="card-icon">✨</span>
-                <h3>Pure Spiritual Energy</h3>
-                <p>Formulated matching strict Vedic traditions to clear negative energies and invite peace, mental clarity, and profound calmness into your environment.</p>
+    <section class="products-section" id="signature-collection">
+        <div class="section-header">
+            <h2>The Signature Collection</h2>
+            <p>Masterpieces engineered to redefine sensory devotion.</p>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="product-black.png" alt="Adhayatma Dhoop Premium Black Box">
+                <h3>Midnight Dhyana Premium Box</h3>
+                <p>An exquisite, deeply aromatic experience packaged in an elite cosmic matte black casing tailored for profound meditation settings.</p>
             </div>
-            <div class="card">
-                <span class="card-icon">🌿</span>
-                <h3>100% Charcoal-Free</h3>
-                <p>We use premium plant-based binding resins instead of cheap black carbon, giving you a clean burn that is safe for the lungs and soothing to the soul.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">⏳</span>
-                <h3>Long-Lasting Aroma</h3>
-                <p>Infused with deeply rich, natural oils that stay bound to the space, ensuring a magnificent premium fragrance that lingers delicately for hours.</p>
+
+            <div class="product-card">
+                <img src="product-luxury.png" alt="Adhayatma Dhoop Luxury Assortment Box">
+                <h3>Sacred Ritual Gift Set</h3>
+                <p>Unveiling the geometry of absolute purity. Houses premium hand-rolled sticks, organic logs, and geometric ritual accessories.</p>
             </div>
         </div>
-    </section>
-
-    <section id="collection" style="background: rgba(10, 3, 1, 0.5); padding: 100px 0;">
-        <footer>
-            <div class="footer-cta">
-                <h2>Ready to Transform Your Rituals?</h2>
-                <p>Be the first to experience the premium difference of Adhayatma Dhoop. Join our exclusive pre-launch list or secure your order to elevate your daily meditation and home ambience.</p>
-                <a href="mailto:info@adhayatmadhoop.com" class="btn-gold">Secure Premium Box</a>
-            </div>
-            <p class="copyright">&copy; 2026 Adhayatma Dhoop. Crafted with Devotion. All Rights Reserved.</p>
-        </footer>
     </section>
 
 </body>
